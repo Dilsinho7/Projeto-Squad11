@@ -10,7 +10,7 @@ function Layout() {
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <Topbar />
         
-        <main style={{ flexGrow: 1, padding: "1rem", backgroundColor: "#f0f2fa" }}>
+        <main style={{ flexGrow: 1, padding: "1.1rem", backgroundColor: "#f0f2fa" }}>
           <Outlet />
         </main>
       </div>

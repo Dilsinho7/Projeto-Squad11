@@ -1,9 +1,9 @@
-
+import "../Home.css"
 
 
 function Home() {
     return (
-        <div>Home</div>
+        <div><h1>Tela principal</h1></div>
     )
 }
 

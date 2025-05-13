@@ -1,9 +1,11 @@
-
+import "../VisuOKR.css";
 
 
 function VisuOKR() {
   return (
-    <div>VisuOKR</div>
+    <div>
+      ...
+    </div>
   )
 }
 

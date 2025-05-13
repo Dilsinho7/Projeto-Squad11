@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -17,23 +18,46 @@ function Navbar() {
       </div>
 
       <div className="menu">
+        <div className="menu-item">
+          📈 {isExpanded && <span> <Link to={"Home"} >Dashboard Principal</Link> </span>}
+        </div>
+
         <div onClick={() => toggleSubMenu("okrs")} className="menu-item">
           📊 {isExpanded && <span>OKRs</span>}
         </div>
         {activeMenu === "okrs" && isExpanded && (
           <div className="submenu">
-            <div className="submenu-item">Visualizar OKRs</div>
+            <div className="submenu-item"> <Link to={"VisuOKR"}>Visualizar OKRs</Link> </div>
             <div className="submenu-item">Cadastrar OKR</div>
           </div>
         )}
 
-        <div className="menu-item">⚙️ {isExpanded && <span>Configurações</span>}</div>
-        <div className="menu-item">❓ {isExpanded && <span>Ajuda</span>}</div>
-        <div className="menu-item">📨 {isExpanded && <span>Sobre</span>}</div>
-        <div className="menu-item">🚪 {isExpanded && <span>Sair</span>}</div>
+        <div className="menu-item">
+          📋 {isExpanded && <span>Relatórios</span>}
+        </div>
+
+        <div className="menu-item">
+          ⭐ {isExpanded && <span>Criar Metas</span>}
+        </div>
+
+        <hr style={{ borderColor: 'rgba(255,255,255,0.2)', margin: '1rem 0' }} />
+
+        <div className="menu-item">
+          ⚙️ {isExpanded && <span>Configurações</span>}
+        </div>
+        <div className="menu-item">
+          ❓ {isExpanded && <span>Ajuda e Suporte</span>}
+        </div>
+        <div className="menu-item">
+          📨 {isExpanded && <span>Sobre</span>}
+        </div>
+        <div className="menu-item">
+          🚪 {isExpanded && <span>Sair</span>}
+        </div>
       </div>
     </div>
   );
 }
 
 export default Navbar;
+
