@@ -9,7 +9,11 @@ a {
 input::placeholder {
   font-family: 'Montserrat';
 }
-
+.Navbar {
+  height: 832px;
+  width: 50px;
+  background-color: #465EFF;
+}
 .header-color{
   display: flex;
   align-items: center;
