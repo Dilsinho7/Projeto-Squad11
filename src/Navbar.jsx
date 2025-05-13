@@ -28,7 +28,7 @@ function Navbar() {
         {activeMenu === "okrs" && isExpanded && (
           <div className="submenu">
             <div className="submenu-item"> <Link to={"VisuOKR"}>Visualizar OKRs</Link> </div>
-            <div className="submenu-item">Cadastrar OKR</div>
+            <div className="submenu-item"> <Link to={"CadastrarOKR"}>Cadastrar OKR</Link> </div>
           </div>
         )}
 
@@ -37,7 +37,7 @@ function Navbar() {
         </div>
 
         <div className="menu-item">
-          ⭐ {isExpanded && <span>Criar Metas</span>}
+          ⭐ {isExpanded && <span> <Link to={"CriarMetas"}>Criar Metas</Link> </span>}
         </div>
 
         <hr style={{ borderColor: 'rgba(255,255,255,0.2)', margin: '1rem 0' }} />
