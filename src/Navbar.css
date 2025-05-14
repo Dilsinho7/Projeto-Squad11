@@ -2,6 +2,20 @@ a, Link {
   text-decoration: none;
   color: #ffff;
 }
+* {
+  box-sizing: border-box;
+}
+.NavButton {
+  background: none;
+  border: none;
+  color: #465EFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+.StyleIcones {
+  width: 21px;
+  height: 20px;
+}
 
 .sidebar {
   background-color: #3f51b5;
@@ -16,11 +30,11 @@ a, Link {
 }
 
 .sidebar.expanded {
-  width: 250px;
+  width: 160px;
 }
 
 .top-bar {
-  background-color: #ffeb3b;
+  background-color: #FCFB30;
   padding: 1rem;
   text-align: center;
 }
@@ -30,24 +44,47 @@ a, Link {
 }
 
 .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 1rem;
   cursor: pointer;
   white-space: nowrap;
+}
+.NavText {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .menu-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.with-submenu {
+  position: relative;
+}
 .submenu {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding-left: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #465EFF;
+  padding: 0.5rem 0;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
 }
 
 .submenu-item {
-  padding: 0.5rem 1rem;
+  padding: 8px 12px;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 13px;
   cursor: pointer;
-  text-decoration: none;
+  white-space: nowrap;
 }
 
 .submenu-item:hover {
