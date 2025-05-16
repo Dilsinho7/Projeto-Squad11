@@ -1,5 +1,8 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import GraficoRadar from './GraficoRadar';
+import styles from './VisuOKR.module.css';
+
 import {
   Chart as ChartJS,
   BarElement,
@@ -10,10 +13,9 @@ import {
   Legend,
 } from 'chart.js';
 
-// Registrar os componentes necessários do Chart.js
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
-export default function VisualizacaoOKRs() {
+export default function VisuOKR() {
   const data = {
     labels: ['Objetivo 1', 'Objetivo 2', 'Objetivo 3'],
     datasets: [
@@ -33,15 +35,24 @@ export default function VisualizacaoOKRs() {
     },
   };
 
-return (
-    <div style={{ display: 'flex', padding: '2rem', alignItems: 'flex-start' }}>
-      <div style={{ flex: 1 }}>
-        <h2>Visualização de OKRs</h2>
-        <p>Descrição dos objetivos e metas aqui...</p>
-      </div>
+  return (
+    <div className={styles.container}>
+      <div className={styles.graficosWrapper}>
+        {/* Gráfico de Barras */}
+        <div className={styles.graficoSection}>
+          <div className={styles.tituloContainer}></div>
+          <div className={styles.graficoContainer}>
+            <Bar data={data} options={options} />
+          </div>
+        </div>
 
-      <div style={{ width: '50%' }}>
-        <Bar data={data} options={options} />
+        {/* Gráfico de Radar */}
+        <div className={styles.graficoSection}>
+          <div className={styles.tituloContainer}></div>
+          <div className={styles.graficoContainer}>
+            <GraficoRadar />
+          </div>
+        </div>
       </div>
     </div>
   );
